@@ -21,7 +21,7 @@ def toSvg(
         radius=3,
     ):
 
-    width = (0.55 * len(text)) + .1
+    width = 0.6 * len(text)
 
     background = f'<rect fill="{bgColor}" width="100%" height="100%" rx="{radius}"/>' if bgColor is not None else ''
 
