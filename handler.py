@@ -37,4 +37,12 @@ def toSvg(
           </text>
         </svg>"""
 
-print(toSvg(text='hello world'))
+def lambda_handler(event, context):
+    svg = toSvg(**event['queryStringParameters'])
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Content-Type': 'image/svg+xml',
+        },
+        'body': svg,
+    }
